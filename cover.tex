@@ -1,0 +1,151 @@
+\documentclass[11pt,english]{article}
+\usepackage[authoryear]{natbib} 
+\usepackage[T1]{fontenc}
+
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage{babel}
+\usepackage{caption}
+\usepackage{ctable}
+\usepackage{enumerate}
+\usepackage{enumitem}  
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{multirow} 
+\usepackage{pdflscape} 
+\usepackage{placeins}
+\usepackage[document]{ragged2e}
+\usepackage{rotfloat}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{newtxmath,newtxtext}
+\usepackage{parskip}
+\usepackage{datatool}
+\usepackage{hyperref}
+\usepackage{fancyhdr}% http://ctan.org/pkg/fancyhdr
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+\captionsetup[figure]{labelfont=sc}  
+\captionsetup[table]{labelfont=sc} 
+
+\setcitestyle{round}
+
+\hypersetup{
+	colorlinks,
+	linkcolor=blue,
+	urlcolor=black, 
+	citecolor=blue % custom color
+}
+
+\addto\extrasenglish{%
+	\renewcommand{\sectionautorefname}{Section}
+	\renewcommand{\equationautorefname}{Equation}
+	\renewcommand{\subsectionautorefname}{Section}
+}
+
+\geometry{verbose,tmargin=2.5cm,bmargin=1cm,lmargin=2cm,rmargin=2cm}
+
+\bibliographystyle{plainnat} %plainnat
+
+\renewcommand{\abstractname}{}
+
+\setstretch{1.1}
+
+\providecommand{\tabularnewline}{\\}
+
+\setlength{\textfloatsep}{5pt}
+
+\pagestyle{empty}% Change page style to fancy
+\fancyhf{}% Clear header/footer
+\fancyhead[L]{ \textcolor{blue!45!black}{\LARGE U\Large NIVERSITY OF \LARGE M\Large ONTREAL} \vspace{0.1cm}}
+%\fancyfoot[C]{Footer}% \fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}% Default \headrulewidth is 0.4pt
+%\renewcommand{\footrulewidth}{0.4pt}% Default \footrulewidth is 0pt
+\setlength{\headsep}{10pt}
+%\lhead{\includegraphics[width=7cm,height=.62cm]{logo_min}}
+
+\makeatletter
+% Blank/missing fields commands
+% \skipblank adds \\ to filled field; * version adds \space instead of newline
+\newcommand\skipblank{\@ifstar\@spskip\@nlskip}
+\newcommand\@nlskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\\}}
+\newcommand\@spskip[1]{\ifthenelse{\DTLiseq{#1}{}}{\relax}{#1\space}}
+% \checkblank replaces blank fields with ***
+\newcommand\checkblank[1]{\ifthenelse{\DTLiseq{#1}{}}{{\color{white}3456789}}{#1}}
+\pagenumbering{gobble}
+\makeatother
+
+\begin{document}
+	
+%	\DTLloaddb{addresses}{addresses_1.csv}
+%	\DTLforeach*{addresses}{%
+	%	\institution=Institution,
+		%\position=Position,
+		%\dept=Department,    
+	%	\addressi=Address1,
+	%	\addressii=Address2,
+	%	\addressiii=Address3}
+		%\city=City,
+	%	\state=State,
+		%\zip=Zip,
+		%\country=Country 
+
+	{%
+		
+		\thispagestyle{fancy}
+		\begin{changemargin}{-0.0em}{-0.0em}
+			\begin{tabular*}{17.7cm}{@{\extracolsep{\fill}}lll}
+				
+				\footnotesize \emph{ } & \footnotesize \emph{Department of Economics} &  \footnotesize \textbf{\emph{Ghislain Afavi}}\tabularnewline [-.4em]
+				& \footnotesize \emph{} & \footnotesize \emph{3150, Jean-Brillant street}\tabularnewline [-.4em] 
+				&  & \footnotesize \emph{C-6070-1, Lionel Groulx Building}\tabularnewline [-.4em]
+				&  & \footnotesize \emph{Montreal, QC, H3C 3J7 }\tabularnewline [-.4em]
+				&  & \tabularnewline [-.4em]
+				&  & \footnotesize \emph{ghislain.afavi@umontreal.ca}\tabularnewline [-.4em]
+				&  & \footnotesize \emph{514 569 5551}
+			\end{tabular*}
+		\end{changemargin}    
+		
+		\justify
+		\today
+		%November 15, 2017
+		
+		\justify
+		\skipblank{INSTITUTION}
+		\skipblank{DEPARTMENT}
+		\skipblank{ADDRESS1}
+		\skipblank{ADDRESS2}
+		\skipblank{ADDRESS3}
+		\skipblank{CITY \ STATE \ ZIP }
+		\skipblank{COUNTRY}
+		\vspace{0.5cm}
+		\justify   
+		Dear Members of the Recruiting Committee:
+		
+		\justify
+		Hi, Ghislain
+		
+		\hspace{14cm}
+		Sincerely,
+		\vspace{-4mm}
+		\begin{figure}[H]
+			\hspace{14.5cm}
+			%\includegraphics[width=2cm,height=1cm]{signature_file_name}
+		\end{figure}
+		\vspace{-9mm}
+		\hspace{13.6cm}  Your Name
+		%\end{addmargin}
+	
+	\clearpage
+}
+\end{document}
