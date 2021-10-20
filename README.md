@@ -6,7 +6,7 @@ Created on Mon Oct 11 20:43:43 2021
 
 This python script updates a latex file automatically to include a job-related information
 like the type of institution, the position, etc.
-Comments are welcome to ghislain.afavi@umontreal. Web site: https://sites.google.com/view/ghislain-afavi/home"
+Comments are welcome to ghislain.afavi@umontreal. Website: https://ghislainafavi.github.io"
 
 To be  able to run this file, you will need:
     
